@@ -1,6 +1,16 @@
 
 version: 2
 
+sources:
+  - name: raw
+    schema: triple_data 
+    tables:
+      - name: raw_green 
+        identifier: my_green_tab
+      - name: raw_yellow
+        identifier: my_yellow_tab
+      - name: raw_fhv
+        identifier: my_fhv_tab                                               
 models:
     - name: my_first_dbt_model
       description: "A starter dbt model"
