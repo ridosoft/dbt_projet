@@ -2,15 +2,17 @@
 version: 2
 
 sources:
-  - name: raw
-    schema: triple_data 
+  - name: raw  #  nom du dossier ou les requetes sql seront genere ça remplace le nom de database dans les requete
+    database: terraform0-457908 # nom du projet dans BigQuerry de google
+    schema: dbt_mmazura # nom de DataSet dans BigQueery dans google
     tables:
-      - name: raw_green 
-        identifier: my_green_tab
-      - name: raw_yellow
-        identifier: my_yellow_tab
-      - name: raw_fhv
-        identifier: my_fhv_tab                                               
+      - name: raw_green # Nauveau nom de la table dans dbt
+        identifier: my_green_tab # nom de la table dans BigQueery dans google 
+        #                       / pas besoin de le preciser si le name a le meme nom que celui du bigQuerry
+      - name: raw_yellow # Nauveau nom de la table dans dbt
+        identifier: my_yellow_tab # nom de la table dans BigQueery dans google
+      - name: raw_fhv # Nauveau nom de la table dans dbt
+        identifier: my_fhv_tab   # nom de la table dans BigQueery dans google                                            
 models:
     - name: my_first_dbt_model
       description: "A starter dbt model"
